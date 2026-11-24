@@ -50,6 +50,9 @@
   --ip-ink: #3553d4;
   --market-ink: #8f6410;
   --biz-ink: #0b7a5c;
+  --ip-solid: #3553d4;
+  --market-solid: #f2a93b;
+  --biz-solid: #0e7a5e;
   --venn-blend: multiply;
   --venn-fill-opacity: 0.32;
   --chip-off-bg: var(--bg-raised);
@@ -72,6 +75,9 @@
   --ip-ink: #93a9ff;
   --market-ink: #f5c26e;
   --biz-ink: #4fd0a9;
+  --ip-solid: #3553d4;
+  --market-solid: #f2a93b;
+  --biz-solid: #0e7a5e;
   --venn-blend: screen;
   --venn-fill-opacity: 0.22;
   --chip-off-bg: var(--bg-raised);
@@ -237,9 +243,9 @@ ul, ol { padding-left: 1.3em; max-width: var(--measure); }
   cursor: pointer;
 }
 .chip[aria-pressed="true"] { color: #fff; border-color: transparent; }
-.chip[data-region="ip"][aria-pressed="true"] { background: var(--ip); }
-.chip[data-region="market"][aria-pressed="true"] { background: var(--market); color: #2c1d05; }
-.chip[data-region="biz"][aria-pressed="true"] { background: var(--biz); }
+.chip[data-region="ip"][aria-pressed="true"] { background: var(--ip-solid); }
+.chip[data-region="market"][aria-pressed="true"] { background: var(--market-solid); color: #2c1d05; }
+.chip[data-region="biz"][aria-pressed="true"] { background: var(--biz-solid); }
 .chip[data-region="ip-market"][aria-pressed="true"] { background: var(--blend-ip-market); }
 .chip[data-region="ip-biz"][aria-pressed="true"] { background: var(--blend-ip-biz); }
 .chip[data-region="market-biz"][aria-pressed="true"] { background: var(--blend-market-biz); }
@@ -290,9 +296,9 @@ ul, ol { padding-left: 1.3em; max-width: var(--measure); }
   font-size: var(--fs-sm); font-weight: 600; color: var(--ink-2); cursor: pointer;
 }
 .agents-tabs [role="tab"][aria-selected="true"] { color: #fff; border-color: transparent; }
-.agents-tabs [role="tab"][data-domain="ip"][aria-selected="true"] { background: var(--ip); }
-.agents-tabs [role="tab"][data-domain="market"][aria-selected="true"] { background: var(--market); color: #2c1d05; }
-.agents-tabs [role="tab"][data-domain="biz"][aria-selected="true"] { background: var(--biz); }
+.agents-tabs [role="tab"][data-domain="ip"][aria-selected="true"] { background: var(--ip-solid); }
+.agents-tabs [role="tab"][data-domain="market"][aria-selected="true"] { background: var(--market-solid); color: #2c1d05; }
+.agents-tabs [role="tab"][data-domain="biz"][aria-selected="true"] { background: var(--biz-solid); }
 .agent-panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-raised); padding: 1.6rem; }
 .example {
   border-left: 3px solid var(--line); padding: 0.8rem 1.1rem;
