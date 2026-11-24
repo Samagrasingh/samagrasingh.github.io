@@ -165,6 +165,7 @@ export function initVenn({ svg, caption, chips }: VennInit) {
   ];
   for (const [id, ins, maskId] of spec) {
     const wrapNode = clipWrap(ins, maskId);
+    wrapNode.classList.add("venn-region-wrap");
     const rect = wrapNode.querySelector(".venn-region") as SVGElement;
     rect.setAttribute("tabindex", "0");
     rect.setAttribute("role", "button");
@@ -193,9 +194,9 @@ export function initVenn({ svg, caption, chips }: VennInit) {
     t.textContent = text;
     labels.appendChild(t);
   };
-  labelAt(240, 62, "IP");
-  labelAt(72, 420, "Market");
-  labelAt(408, 420, "Business");
+  labelAt(240, 34, "IP");
+  labelAt(72, 424, "Market");
+  labelAt(408, 424, "Business");
   svg.appendChild(labels);
 
   // chips
@@ -214,16 +215,22 @@ export function initVenn({ svg, caption, chips }: VennInit) {
     }
   }
 
+  const wraps = new Map<Region, SVGElement>();
+  regionsG.querySelectorAll<SVGElement>(".venn-region-wrap").forEach((g) => {
+    const r = g.querySelector<SVGElement>(".venn-region")!;
+    wraps.set(r.dataset.region as Region, g);
+  });
+
   let selected: Region | null = null;
   function select(id: Region | null) {
     selected = selected === id ? null : id;
     svg.classList.toggle("dim", selected !== null);
     for (const [rid, r] of regionEls) {
       const on = rid === selected;
-      r.classList.toggle("selected", on);
+      wraps.get(rid)!.classList.toggle("selected", on);
       r.setAttribute("aria-pressed", String(on));
       r.setAttribute("fill", on ? REGION_FILL[rid] : "transparent");
-      r.setAttribute("fill-opacity", on ? "0.55" : "0");
+      r.setAttribute("fill-opacity", on ? "0.7" : "0");
     }
     for (const [rid, c] of chipEls) c.setAttribute("aria-pressed", String(rid === selected));
     caption.textContent = selected

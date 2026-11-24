@@ -233,10 +233,11 @@ ul, ol { padding-left: 1.3em; max-width: var(--measure); }
 .venn-figure { margin: 0; }
 .venn-svg { width: 100%; height: auto; display: block; }
 .venn-domain { mix-blend-mode: var(--venn-blend); }
+.venn-svg.dim .venn-domain { fill-opacity: 0.06; stroke-opacity: 0.35; }
 .venn-region { fill: transparent; cursor: pointer; }
 .venn-region:hover, .venn-region:focus-visible { fill: rgba(128, 128, 128, 0.14); }
-.venn-region.selected { stroke: var(--ink); stroke-width: 1.5; }
-.venn-svg.dim .venn-region:not(.selected) { opacity: 0.25; }
+.venn-region-wrap.selected { filter: drop-shadow(0 0 5px var(--ink)); }
+.venn-region-wrap.selected .venn-region { fill-opacity: 0.7; }
 .venn-svg .region-focus-ring { fill: none; stroke: var(--focus); stroke-width: 2.5; }
 .venn-domain-label { font-family: var(--font-display); font-weight: 700; font-size: 17px; fill: var(--ink); }
 .venn-caption {
@@ -254,10 +255,12 @@ ul, ol { padding-left: 1.3em; max-width: var(--measure); }
 .chip[data-region="ip"][aria-pressed="true"] { background: var(--ip-solid); }
 .chip[data-region="market"][aria-pressed="true"] { background: var(--market-solid); color: #2c1d05; }
 .chip[data-region="biz"][aria-pressed="true"] { background: var(--biz-solid); }
-.chip[data-region="ip-market"][aria-pressed="true"] { background: var(--blend-ip-market); }
-.chip[data-region="ip-biz"][aria-pressed="true"] { background: var(--blend-ip-biz); }
-.chip[data-region="market-biz"][aria-pressed="true"] { background: var(--blend-market-biz); }
-.chip[data-region="all"][aria-pressed="true"] { background: var(--blend-all); }
+.chip[data-region="ip-market"][aria-pressed="true"],
+.chip[data-region="ip-biz"][aria-pressed="true"],
+.chip[data-region="market-biz"][aria-pressed="true"],
+.chip[data-region="all"][aria-pressed="true"] {
+  background: var(--ink); color: var(--bg);
+}
 
 /* ---------------------------------------------------------------------------
    Sections
@@ -283,7 +286,11 @@ ul, ol { padding-left: 1.3em; max-width: var(--measure); }
 .walk-step h3 { margin-bottom: 0.3em; }
 .walk-step p { margin: 0; color: var(--ink-2); }
 .walk-svg .stage { opacity: 0; }
-.walk-svg .stage.on { opacity: 1; }
+.walk-svg .stage.on {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px var(--ink));
+}
+.walk-svg .stage.on rect { fill-opacity: 0.65; }
 
 /* How it works */
 .steps3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.6rem; counter-reset: flow; }
@@ -307,6 +314,9 @@ ul, ol { padding-left: 1.3em; max-width: var(--measure); }
 .agents-tabs [role="tab"][data-domain="ip"][aria-selected="true"] { background: var(--ip-solid); }
 .agents-tabs [role="tab"][data-domain="market"][aria-selected="true"] { background: var(--market-solid); color: #2c1d05; }
 .agents-tabs [role="tab"][data-domain="biz"][aria-selected="true"] { background: var(--biz-solid); }
+#audience-tabs [role="tab"][aria-selected="true"] {
+  background: var(--ink); color: var(--bg); border-color: transparent;
+}
 .agent-panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-raised); padding: 1.6rem; }
 .example {
   border-left: 3px solid var(--line); padding: 0.8rem 1.1rem;

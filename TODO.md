@@ -5,8 +5,7 @@
   supply a contact email (mailto) or form endpoint.
 - Product screenshots: `public/assets/shot-*.webp` are from the demo
   dataset. User to supply final screenshots; replace files and update
-  alt text if the UI changed. Extra unused captures remain in
-  `assets/shot-*.png` (not shipped).
+  alt text if the UI changed.
 - `index.html` audience section: user to supply any partner/customer
   case details if desired (marked with an HTML `TODO` comment).
 - `index.html` roadmap: user to supply final roadmap (marked with an

@@ -52,6 +52,17 @@ export function initWalkthrough() {
   }
   svg.appendChild(domains);
 
+  const labels = el("g", {});
+  for (const [t, x, y] of [["IP", "240", "34"],
+                           ["Market", "72", "424"],
+                           ["Business", "408", "424"]]) {
+    const tx = el("text", { x, y, "text-anchor": "middle",
+                            class: "venn-domain-label" });
+    tx.textContent = t;
+    labels.appendChild(tx);
+  }
+  svg.appendChild(labels);
+
   // one clipped region per stage
   const stages = new Map<Region, SVGElement>();
   for (const s of REGION_ORDER) {
