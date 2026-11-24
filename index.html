@@ -1,12 +1,424 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Strategic Intelligence Platform</title>
+  <script>
+    // Apply theme before first paint to avoid a flash.
+    document.documentElement.classList.remove("no-js");
+    try {
+      var t = localStorage.getItem("theme");
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    } catch (e) { document.documentElement.dataset.theme = "light"; }
+  </script>
+  <title>Strategic Intelligence Platform — IP, market and business intelligence in one workspace</title>
+  <meta name="description" content="Strategic Intelligence Platform connects patent signals, market signals and your business priorities in one reviewable workspace — with consulting agents for IP, market and business questions.">
+  <link rel="canonical" href="https://samagrasingh.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Strategic Intelligence Platform">
+  <meta property="og:title" content="Strategic Intelligence Platform — IP, market and business intelligence in one workspace">
+  <meta property="og:description" content="Patent signals, market signals and business priorities — connected, analysed and advised on, in one platform.">
+  <meta property="og:url" content="https://samagrasingh.github.io/">
+  <meta property="og:image" content="https://samagrasingh.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Strategic Intelligence Platform">
+  <meta name="twitter:description" content="IP, market and business intelligence in one reviewable workspace.">
+  <meta name="twitter:image" content="https://samagrasingh.github.io/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Strategic Intelligence Platform",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://strategic-intelligence-platform-uyl.vercel.app"
+    }
+  </script>
 </head>
 <body>
-  <div id="app"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="wrap">
+      <a class="wordmark" href="#top">Strategic Intelligence <em>Platform</em></a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#connected">Connected view</a></li>
+          <li><a href="#agents">Agents</a></li>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#audience">Who it's for</a></li>
+          <li><a href="#roadmap">Vision</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button"
+                aria-label="Toggle dark theme" aria-pressed="false">◐</button>
+        <a class="btn btn-primary" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a>
+        <button class="menu-toggle" id="menu-toggle" type="button"
+                aria-expanded="false" aria-controls="nav-links"
+                aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 2. Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Patent, market and business intelligence — in one place</h1>
+          <p class="lede">Strategic Intelligence Platform connects IP signals,
+            market signals and your business priorities, then turns them into
+            analysis and recommendations your team can check.</p>
+          <p class="hero-ctas">
+            <a class="btn btn-primary" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a>
+            <a class="btn btn-outline" href="#contact">Request a walkthrough</a>
+          </p>
+        </div>
+        <figure class="venn-figure">
+          <svg id="hero-venn" class="venn-svg" viewBox="0 0 480 480"
+               role="img" aria-label="Venn diagram of IP intelligence, market intelligence and business intelligence"></svg>
+          <figcaption class="venn-caption" id="venn-caption" aria-live="polite">
+            Select a region to see what lives there.
+          </figcaption>
+          <div class="venn-chips" id="venn-chips" role="group"
+               aria-label="Venn regions"></div>
+        </figure>
+      </div>
+      <div class="wrap">
+        <ul class="region-list no-js-only">
+          <li><strong>IP intelligence</strong>Patent signals: filings, claims, citations and portfolio data.</li>
+          <li><strong>Market intelligence</strong>Market signals: news, filings, publications and recalls.</li>
+          <li><strong>Business intelligence</strong>The company's strategic business priorities and topics.</li>
+          <li><strong>IP × Market</strong>Technology momentum: patent activity meets market movement.</li>
+          <li><strong>IP × Business</strong>Patent position measured against strategic priorities.</li>
+          <li><strong>Market × Business</strong>Market shifts checked against strategic priorities.</li>
+          <li><strong>All three</strong>The strategic recommendation: IP, market and business read together.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Problem -->
+    <section class="section" id="problem">
+      <div class="wrap">
+        <p class="kicker">The problem</p>
+        <h2>Three disconnected views of the same strategy</h2>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <h3><span class="dot ip"></span>IP view</h3>
+            <p>Patent analysts see filings, claims and citations — but rarely
+              the market context those patents operate in.</p>
+          </div>
+          <div class="problem-card">
+            <h3><span class="dot market"></span>Market view</h3>
+            <p>Strategy teams track competitors, news and filings — but the
+              link to who owns which technology gets lost.</p>
+          </div>
+          <div class="problem-card">
+            <h3><span class="dot biz"></span>Business view</h3>
+            <p>Leadership sets priorities — but testing a patent position or
+              a market shift against them is slow, manual work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Connected view (scroll walkthrough) -->
+    <section class="section" id="connected">
+      <div class="wrap">
+        <p class="kicker">The connected view</p>
+        <h2>One picture, seven regions</h2>
+        <div class="walk">
+          <figure class="walk-figure">
+            <svg id="walk-venn" class="venn-svg walk-svg" viewBox="0 0 480 480"
+                 role="img" aria-label="Venn diagram assembling region by region"></svg>
+          </figure>
+          <div class="walk-steps" id="walk-steps">
+            <div class="walk-step" data-region="ip">
+              <h3>IP intelligence</h3>
+              <p>Patent APIs supply the IP signals: filings, claims, citations
+                and portfolio structure.</p>
+            </div>
+            <div class="walk-step" data-region="market">
+              <h3>Market intelligence</h3>
+              <p>News APIs and public sources supply market signals:
+                announcements, filings, publications and recalls.</p>
+            </div>
+            <div class="walk-step" data-region="biz">
+              <h3>Business intelligence</h3>
+              <p>Your strategic priorities — the business topics leadership
+                actually cares about — anchor both.</p>
+            </div>
+            <div class="walk-step" data-region="ip-market">
+              <h3>IP × Market — technology momentum</h3>
+              <p>Where patent activity and market movement point the same
+                way, a technology is gaining momentum.</p>
+            </div>
+            <div class="walk-step" data-region="ip-biz">
+              <h3>IP × Business — position vs priorities</h3>
+              <p>How strong your patent position is in the areas the business
+                has decided matter.</p>
+            </div>
+            <div class="walk-step" data-region="market-biz">
+              <h3>Market × Business — shifts vs priorities</h3>
+              <p>Which market shifts threaten or serve your stated
+                priorities.</p>
+            </div>
+            <div class="walk-step" data-region="all">
+              <h3>All three — the strategic recommendation</h3>
+              <p>Read together, the three views produce a recommendation you
+                can defend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. How it works -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <p class="kicker">How it works</p>
+        <h2>Collect, connect, advise</h2>
+        <div class="steps3">
+          <div class="step3">
+            <h3>Collect</h3>
+            <p>Patent and news APIs bring IP and market signals into one
+              platform — alongside your own imported datasets.</p>
+          </div>
+          <div class="step3">
+            <h3>Connect</h3>
+            <p>Signals are grounded in your strategic business topics, so
+              every patent and every market event has a place.</p>
+          </div>
+          <div class="step3">
+            <h3>Advise</h3>
+            <p>Consulting agents — each trained on its field's topics and
+              methods — produce analysis and recommendations you can review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Consulting agents -->
+    <section class="section" id="agents">
+      <div class="wrap">
+        <p class="kicker">Consulting agents</p>
+        <h2>An expert for each field</h2>
+        <div class="agents-tabs" id="agents-tabs">
+          <div role="tablist" aria-label="Consulting agents">
+            <button role="tab" id="tab-agent-ip" aria-controls="panel-agent-ip"
+                    data-domain="ip" aria-selected="true">IP agent</button>
+            <button role="tab" id="tab-agent-market" aria-controls="panel-agent-market"
+                    data-domain="market" aria-selected="false" tabindex="-1">Market agent</button>
+            <button role="tab" id="tab-agent-biz" aria-controls="panel-agent-biz"
+                    data-domain="biz" aria-selected="false" tabindex="-1">Business agent</button>
+          </div>
+          <div role="tabpanel" id="panel-agent-ip" aria-labelledby="tab-agent-ip" tabindex="0">
+            <div class="agent-panel">
+              <p>The IP agent reads patents the way an IP analyst does: claims,
+                families, citations and legal status, against your feature and
+                label framework.</p>
+              <div class="example">
+                <span class="tag">Illustrative example</span>
+                <p class="q">“Which of these patents could block our new seat
+                  actuator design?”</p>
+                <p class="a">It breaks the relevant claims into limitations,
+                  checks them against your product features, and flags the
+                  claims that look fully covered — with the reasoning attached
+                  for review.</p>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" id="panel-agent-market" aria-labelledby="tab-agent-market" tabindex="0" hidden>
+            <div class="agent-panel">
+              <p>The Market agent follows competitors, domains and market
+                events — connecting what happened to who it affects.</p>
+              <div class="example">
+                <span class="tag">Illustrative example</span>
+                <p class="q">“What moved in automotive seating this quarter?”</p>
+                <p class="a">It groups the quarter's market signals by topic,
+                  links them to the companies involved, and highlights the
+                  shifts worth a closer look.</p>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" id="panel-agent-biz" aria-labelledby="tab-agent-biz" tabindex="0" hidden>
+            <div class="agent-panel">
+              <p>The Business agent keeps your strategic topics front and
+                centre — weighing IP and market signals against stated
+                priorities.</p>
+              <div class="example">
+                <span class="tag">Illustrative example</span>
+                <p class="q">“Should a seat-systems supplier invest in haptic
+                  feedback now?”</p>
+                <p class="a">It weighs your patent position and the market
+                  momentum in that area against your priorities, then sets out
+                  a recommendation with the evidence behind it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Product showcase -->
+    <section class="section" id="product">
+      <div class="wrap">
+        <p class="kicker">Product</p>
+        <h2>Inside the platform</h2>
+        <p class="muted small">Screens from the live product, running on a
+          fictional demo dataset.</p>
+        <div class="shot-frame">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <img src="/assets/shot-results.webp" width="1440" height="900"
+               loading="lazy" decoding="async"
+               alt="Results matrix: patents as rows, technology labels as columns, each cell showing a YES or NO verdict with confidence and review state.">
+        </div>
+        <div class="shot-callouts">
+          <div class="callout">
+            <h3>Verdicts you can audit</h3>
+            <p>Every classification shows its confidence and review state —
+              nothing is final until an analyst says so.</p>
+          </div>
+          <div class="callout">
+            <h3>Labels as infrastructure</h3>
+            <p>A master label repository shared across projects keeps
+              terminology consistent.</p>
+          </div>
+          <div class="callout">
+            <h3>Claims, cited</h3>
+            <p>Claim-level analysis quotes the patent text it relies on —
+              checked verbatim before it counts.</p>
+          </div>
+        </div>
+        <div class="shot-frame">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <img src="/assets/shot-citations.webp" width="1440" height="900"
+               loading="lazy" decoding="async"
+               alt="Citation network graph of a demo portfolio, with nodes sized by forward citations and a most-cited list.">
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Who it's for -->
+    <section class="section" id="audience">
+      <div class="wrap">
+        <p class="kicker">Who it's for</p>
+        <h2>Built for three audiences</h2>
+        <div class="agents-tabs" id="audience-tabs">
+          <div role="tablist" aria-label="Audience">
+            <button role="tab" id="tab-aud-sales" aria-controls="panel-aud-sales"
+                    aria-selected="true">Customers</button>
+            <button role="tab" id="tab-aud-investors" aria-controls="panel-aud-investors"
+                    aria-selected="false" tabindex="-1">Investors</button>
+            <button role="tab" id="tab-aud-partners" aria-controls="panel-aud-partners"
+                    aria-selected="false" tabindex="-1">Partners</button>
+          </div>
+          <div role="tabpanel" id="panel-aud-sales" aria-labelledby="tab-aud-sales" tabindex="0">
+            <div class="agent-panel">
+              <p>Technology, IP and strategy teams get one workspace for
+                classification, analysis and market tracking — with every AI
+                suggestion reviewable before it counts.</p>
+              <p><a class="btn btn-primary" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a></p>
+            </div>
+          </div>
+          <div role="tabpanel" id="panel-aud-investors" aria-labelledby="tab-aud-investors" tabindex="0" hidden>
+            <div class="agent-panel">
+              <p>The platform sits where three growing fields meet: IP
+                analytics, market intelligence and AI-assisted decision
+                support. The approach is deliberately conservative —
+                verifiable AI, human-in-the-loop, enterprise governance.</p>
+              <p><a class="btn btn-outline" href="#contact">Request a walkthrough</a></p>
+            </div>
+          </div>
+          <div role="tabpanel" id="panel-aud-partners" aria-labelledby="tab-aud-partners" tabindex="0" hidden>
+            <div class="agent-panel">
+              <p>Data providers, consultancies and integrators can plug into
+                the signal and analysis layers — reach out to discuss working
+                together.</p>
+              <p><a class="btn btn-outline" href="#contact">Get in touch</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- TODO: user to supply partner/audience-specific case details -->
+      </div>
+    </section>
+
+    <!-- 9. Vision / roadmap -->
+    <section class="section" id="roadmap">
+      <div class="wrap">
+        <p class="kicker">Vision</p>
+        <h2>Where the platform is heading</h2>
+        <p>The goal is a single decision workspace where a technology
+          question goes from search to a defensible answer — evidence intact.</p>
+        <ul class="roadmap-list">
+          <li><h3>Simpler FTO</h3>
+            <p>Claim-limitation breakdown (L1, L2, …) with YES / MAYBE / NO
+              verdicts and the reasoning behind each.</p></li>
+          <li><h3>Broader claim coverage</h3>
+            <p>Full-text claim coverage across more jurisdictions and
+              document types.</p></li>
+          <li><h3>Signals ↔ patents</h3>
+            <p>Deeper linking between market signals and the patents behind
+              them.</p></li>
+          <li><h3>Agents across domains</h3>
+            <p>Consulting agents for IP, market and business questions,
+              trained on each field's methods.</p></li>
+          <li><h3>Collaboration</h3>
+            <p>Team workspaces, shared reviews and reporting.</p></li>
+          <li><h3>Roadmap details</h3>
+            <p>Coming soon.</p></li>
+          <!-- TODO: user to supply roadmap -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- 10. Final CTA + contact -->
+    <section class="section final-cta" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="kicker">Get started</p>
+          <h2>See it working</h2>
+          <p>Open the live platform on the demo dataset, or ask for a guided
+            walkthrough of the workflow that matters to you.</p>
+          <p><a class="btn btn-primary" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a></p>
+        </div>
+        <div id="contact-form-slot">
+          <form class="contact" id="contact-form" novalidate>
+            <label>Name <input name="name" type="text" autocomplete="name" required></label>
+            <label>Email <input name="email" type="email" autocomplete="email" required></label>
+            <label>Organisation <input name="organisation" type="text" autocomplete="organization"></label>
+            <label>I am…
+              <select name="audience">
+                <option value="">Choose…</option>
+                <option value="customer">A potential customer</option>
+                <option value="investor">An investor</option>
+                <option value="partner">A potential partner</option>
+                <option value="other">Something else</option>
+              </select>
+            </label>
+            <label>Message <textarea name="message" required></textarea></label>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-note" id="form-note" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="muted">Strategic Intelligence Platform · © 2026</span>
+      <a href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Sign in to the platform</a>
+    </div>
+  </footer>
+
   <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
