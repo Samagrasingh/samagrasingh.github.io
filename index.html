@@ -54,12 +54,13 @@
           <li><a href="#product">Product</a></li>
           <li><a href="#audience">Who it's for</a></li>
           <li><a href="#roadmap">Vision</a></li>
+          <li class="nav-cta-item"><a class="btn btn-primary" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
         <button class="theme-toggle" id="theme-toggle" type="button"
                 aria-label="Toggle dark theme" aria-pressed="false">◐</button>
-        <a class="btn btn-primary" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a>
+        <a class="btn btn-primary nav-cta" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a>
         <button class="menu-toggle" id="menu-toggle" type="button"
                 aria-expanded="false" aria-controls="nav-links"
                 aria-label="Toggle navigation menu">☰</button>
@@ -83,7 +84,16 @@
         </div>
         <figure class="venn-figure">
           <svg id="hero-venn" class="venn-svg" viewBox="0 0 480 480"
-               role="group" aria-label="Venn diagram of IP intelligence, market intelligence and business intelligence"></svg>
+               role="group" aria-label="Venn diagram of IP intelligence, market intelligence and business intelligence">
+            <g class="venn-static" aria-hidden="true">
+              <circle cx="240" cy="160" r="118" fill="var(--ip)" fill-opacity="var(--venn-fill-opacity)" stroke="var(--ip)" stroke-width="1.5"/>
+              <circle cx="155" cy="310" r="118" fill="var(--market)" fill-opacity="var(--venn-fill-opacity)" stroke="var(--market)" stroke-width="1.5"/>
+              <circle cx="325" cy="310" r="118" fill="var(--biz)" fill-opacity="var(--venn-fill-opacity)" stroke="var(--biz)" stroke-width="1.5"/>
+              <text x="240" y="62" text-anchor="middle" class="venn-domain-label">IP</text>
+              <text x="72" y="420" text-anchor="middle" class="venn-domain-label">Market</text>
+              <text x="408" y="420" text-anchor="middle" class="venn-domain-label">Business</text>
+            </g>
+          </svg>
           <figcaption class="venn-caption" id="venn-caption" aria-live="polite">
             Select a region to see what lives there.
           </figcaption>
@@ -390,6 +400,8 @@
           <p><a class="btn btn-primary" href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">Open live platform</a></p>
         </div>
         <div id="contact-form-slot">
+          <p class="form-note" id="contact-static-note">Contact details coming
+            soon — meanwhile, <a href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">open the live platform</a>.</p>
           <form class="contact" id="contact-form" novalidate>
             <label>Name <input name="name" type="text" autocomplete="name" required></label>
             <label>Email <input name="email" type="email" autocomplete="email" required></label>

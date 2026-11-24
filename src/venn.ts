@@ -132,6 +132,7 @@ interface VennInit {
 export function initVenn({ svg, caption, chips }: VennInit) {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  svg.querySelector(".venn-static")?.remove();
   svg.appendChild(vennDefs());
 
   const domains = el("g", { "aria-hidden": "true" });

@@ -4,15 +4,14 @@ export function initContactForm() {
   const slot = document.getElementById("contact-form-slot");
   const form = document.getElementById("contact-form") as HTMLFormElement | null;
   const note = document.getElementById("form-note");
+  const staticNote = document.getElementById("contact-static-note");
   if (!slot || !form || !note) return;
 
   if (!CONTACT_EMAIL && !FORM_ENDPOINT) {
-    slot.innerHTML =
-      '<p class="form-note">Contact details coming soon — meanwhile, ' +
-      '<a href="https://strategic-intelligence-platform-uyl.vercel.app/dashboard">' +
-      "open the live platform</a>.</p>";
+    form.remove(); // static note remains
     return;
   }
+  staticNote?.remove();
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();

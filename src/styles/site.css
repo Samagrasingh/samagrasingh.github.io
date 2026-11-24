@@ -196,9 +196,17 @@ ul, ol { padding-left: 1.3em; max-width: var(--measure); }
   cursor: pointer;
 }
 .menu-toggle { display: none; }
+.nav-cta-item { display: none; }
+
+@media (max-width: 40rem) {
+  .nav-actions .nav-cta { display: none; }
+  .site-nav .wrap { gap: 0.6rem; }
+}
 
 @media (max-width: 56rem) {
   .menu-toggle { display: inline-flex; }
+  .nav-cta-item { display: block; padding: 0.7rem 1.5rem; }
+  .nav-cta-item .btn { display: inline-block; }
   .nav-links {
     display: none; position: absolute; left: 0; right: 0; top: 100%;
     flex-direction: column; gap: 0;
@@ -360,6 +368,8 @@ form.contact textarea { min-height: 7em; resize: vertical; }
 .region-list li strong { display: block; margin-bottom: 0.2em; }
 .no-js-only { display: none; }
 html.no-js .no-js-only { display: grid; }
+html.no-js #contact-form { display: none; }
+.nav-cta-item .btn-primary { color: var(--accent-ink); }
 
 @media (max-width: 56rem) {
   .hero-grid, .walk, .contact-grid { grid-template-columns: 1fr; }
