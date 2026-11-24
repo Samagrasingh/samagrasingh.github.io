@@ -229,8 +229,8 @@ export function initVenn({ svg, caption, chips }: VennInit) {
       const on = rid === selected;
       wraps.get(rid)!.classList.toggle("selected", on);
       r.setAttribute("aria-pressed", String(on));
-      r.setAttribute("fill", on ? REGION_FILL[rid] : "transparent");
-      r.setAttribute("fill-opacity", on ? "0.7" : "0");
+      r.style.fill = on ? REGION_FILL[rid] : "";
+      r.style.fillOpacity = on ? "0.7" : "";
     }
     for (const [rid, c] of chipEls) c.setAttribute("aria-pressed", String(rid === selected));
     caption.textContent = selected
